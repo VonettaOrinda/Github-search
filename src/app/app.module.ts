@@ -7,7 +7,7 @@ import { ProfileService } from './services/profile.service';
 import { HttpClientModule} from '@angular/common/http';
 
 
-@NgModule({
+@NgModule({ 
   declarations: [
     AppComponent,
     ProfileComponent,
