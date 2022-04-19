@@ -8,6 +8,12 @@ import { pipe } from 'rxjs/internal/util/pipe';
   providedIn: 'root'
 })
 export class ProfileService {
+  // updateProfile(username: string) {
+  //   throw new Error('Method not implemented.');
+  // }
+  // getProfileRepos() {
+  //   throw new Error('Method not implemented.');
+  // }
 
   private username:string;
   private clientid: 'f49e0f06935c40d04bfc' = "f49e0f06935c40d04bfc";
@@ -27,4 +33,13 @@ export class ProfileService {
     
      
    }
+   getProfileRepos(){
+  	return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+  	// .map(res => res.json());
+  }
+
+  updateProfile(username:string){
+  	this.username = username;
+  }
+
 }
