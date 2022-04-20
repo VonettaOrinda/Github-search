@@ -8,23 +8,22 @@ import { ProfileService } from 'src/app/services/profile.service';
 })
 
 export class ProfileComponent implements OnInit {
-  profile!: any;
-  repos!: any[];
-  username!: string;
-  findProfileprofileService: any;
+  profile:any;
+  repos!: any;
+  username!:string;
 
   constructor(private profileService: ProfileService) { 
 
   }
 
   findProfile(){
-  	
-  	this.profileService.getProfileInfo().subscribe((profile : any)  => {
+  	this.profileService.updateProfile(this.username);
+  	this.profileService.getProfileInfo().subscribe(profile => {
   		console.log(profile);
   		this.profile = profile;
   	});
 
-  	this.profileService.getProfileRepos().subscribe((repos: any) => {
+  	this.profileService.getProfileRepos().subscribe(repos=> {
   		console.log(repos);
   		this.repos = repos;
   	})  	
@@ -36,24 +35,38 @@ export class ProfileComponent implements OnInit {
 }
 
 
-//   export class ProfileComponent implements OnInit {
-//   [x: string]: any;
-//     profile!: any;
-//     repos!: any;
-//     username!: string;
 
-//   constructor(private ProfileService:ProfileService) { 
-    // this.ProfileService.getProfileInfo().subscribe((profile: any) =>{ 
-    //   console.log(profile);
-    //   this.profile=profile;
-//     });
-//     this['profileService'].getProfileRepos().subscribe((repos: any) => {
-//       console.log(repos);
-//       this.repos=repos;
+// export class ProfileComponent implements OnInit {
+//   profile!: any;
+//   repos!: any[];
+//   username!: string;
+//   profileService: any;
+
+//   constructor() { 
+
 //   }
-  
+//   ngOnInit(): void {
+//     throw new Error('Method not implemented.');
+//   }
+
+//   findProfile(){
+  	
+//   	this.profileService.getProfileInfo().subscribe((profile : any)  => {
+//   		console.log(profile);
+//   		this.profile = profile;
+//   	});
+
+//   	this.profileService.getProfileRepos().subscribe((repos: any) => {
+//   		console.log(repos);
+//   		this.repos = repos;
+//   	})  	
+//   }
+
+//   }
+
+//   ngOnInit() {
+//   }
+
 // }
 
-//  ngOnInit(): void {
-  
-// }
+

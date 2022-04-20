@@ -1,6 +1,8 @@
+
+
 <form action="" class="search-form">
 	<div class="form-group">
-		<input type="text" class="form-control" placeholder="Search git users with username" (ngModel)="username" name="username" (keyup)="findProfile()">
+		<input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="findProfile()">
 	</div>
 </form>
 <div *ngIf="profile">
@@ -38,7 +40,7 @@
 							</div>
 							<div class="panel-body" *ngFor="let repo of repos">
 								<p class="clearfix">
-									{{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project</a>
+									{{repo.name}} <br><a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-warning pull-right">View this project <br></a>
 								</p>
 								<p>{{repo.description}}</p>
 							</div>

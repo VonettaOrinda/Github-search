@@ -1,2 +1,14 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
+.container{
+    background-color: burlywood;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+span{
+    font-weight: bold;
+    font-size: 15px;
+    
+}
